@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: foodie-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://foodie-food-ordering-system.vercel.app
+    healthCheckPath: /api/restaurants
